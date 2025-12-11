@@ -16,8 +16,12 @@
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
+      <div id="unity-parody-footer">
+          All music, images, backgrounds and gameplay shown here are intended as parody or satire. Any similarities to real individuals, events or copyrighted materials are purely coincidental and not a factual representation. No offense is intended; elements are included for artistic, transformative or comedic effect only. We make no claim or suggestion of connection to the original creators. If you feel personally targeted, rest assured — you’re giving yourself too much credit.
+      </div>
       <div id="unity-warning"> </div>
       <div id="unity-footer">
+        
         <!--<div id="unity-logo-title-footer"></div>-->
         <!--<div id="unity-fullscreen-button"></div>-->
         <!--<div id="unity-build-title">CrowdRunner</div>-->
@@ -114,6 +118,7 @@
           document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
               }).then((unityInstance) => {
                 document.querySelector("#unity-loading-bar").style.display = "none";
+                document.querySelector("#unity-parody-footer").style.display = "none";
                 /*document.querySelector("#unity-fullscreen-button").onclick = () => {
                   unityInstance.SetFullscreen(1);
                 };*/

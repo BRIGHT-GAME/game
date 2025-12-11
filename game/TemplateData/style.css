@@ -5,7 +5,7 @@ body { padding: 0; margin: 0 }
 #unity-canvas { background: #231F20 }
 .unity-mobile #unity-canvas { width: 100%; height: 100% }
 #unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: none }
-#unity-logo { width: 154px; height: 130px; background: url('unity-logo-dark.png') no-repeat center }
+#unity-logo { width: 154px; height: 155px; background: url('unity-logo-dark.png') no-repeat center }
 #unity-progress-bar-empty { width: 141px; height: 18px; margin-top: 10px; margin-left: 6.5px; background: url('progress-bar-empty-dark.png') no-repeat center }
 #unity-progress-bar-full { width: 0%; height: 18px; margin-top: 10px; background: url('progress-bar-full-dark.png') no-repeat center }
 #unity-footer { position: relative }
@@ -14,3 +14,21 @@ body { padding: 0; margin: 0 }
 #unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px }
 #unity-fullscreen-button { cursor:pointer; float: right; width: 38px; height: 38px; background: url('fullscreen-button.png') no-repeat center }
 #unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
+/* Стили для твоего предупреждения */
+#unity-parody-footer {
+    position: absolute; /* Позиционируем абсолютно внутри контейнера */
+    bottom: 10px; /* Прижимаем к низу */
+    left: 50%; /* Центруем по горизонтали */
+    transform: translateX(-50%); /* Корректируем центр */
+    width: 90%; /* Ширина блока */
+    max-width: 800px; /* Максимальная ширина, чтобы не растягивалось на широких экранах */
+    text-align: center; /* Выравнивание текста по центру */
+    font-family: "Arial", sans-serif; /* Запасной шрифт, если Fox on the Run не загрузится */
+    font-size: 11px; /* Мелкий шрифт, как в типичных дисклеймерах */
+    line-height: 1.4; /* Межстрочный интервал для читаемости */
+    color: #888; /* Серый, неброский цвет */
+    opacity: 0.8; /* Легкая полупрозрачность */
+    z-index: 10; /* Чтобы текст был поверх других элементов, если нужно */
+    display: block; /* Гарантируем, что он видим */
+    pointer-events: none; /* Чтобы текст не мешал кликам, если он поверх канваса */
+}
