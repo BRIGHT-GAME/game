@@ -4,31 +4,100 @@ body { padding: 0; margin: 0 }
 #unity-container.unity-mobile { position: fixed; width: 100%; height: 100% }
 #unity-canvas { background: #231F20 }
 .unity-mobile #unity-canvas { width: 100%; height: 100% }
-#unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: none }
-#unity-logo { width: 154px; height: 155px; background: url('unity-logo-dark.png') no-repeat center }
-#unity-progress-bar-empty { width: 141px; height: 18px; margin-top: 10px; margin-left: 6.5px; background: url('progress-bar-empty-dark.png') no-repeat center }
-#unity-progress-bar-full { width: 0%; height: 18px; margin-top: 10px; background: url('progress-bar-full-dark.png') no-repeat center }
+#unity-loading-bar { 
+    position: absolute; 
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, -50%); 
+    display: none;
+    text-align: center;
+    width: 100%;
+}
+#unity-logo { 
+    width: 256px; 
+    height: 256px; 
+    background: url('unity-logo-dark.png') no-repeat center;
+    background-size: contain; /* ← ФИКС ЗДЕСЬ! */
+    margin: 0 auto;
+}
+#unity-progress-bar-empty { 
+    width: 400px;
+    height: 20px;
+    margin: 20px auto 0;
+    background: #444;
+    border: 2px solid #666;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#unity-progress-bar-full { 
+    width: 0%; 
+    height: 100%;
+    margin-top: 0;
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+    transition: width 0.3s ease;
+}
 #unity-footer { position: relative }
 .unity-mobile #unity-footer { display: none }
 #unity-logo-title-footer { float:left; width: 102px; height: 38px; background: url('unity-logo-title-footer.png') no-repeat center }
 #unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px }
 #unity-fullscreen-button { cursor:pointer; float: right; width: 38px; height: 38px; background: url('fullscreen-button.png') no-repeat center }
 #unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
-/* Стили для твоего предупреждения */
 #unity-parody-footer {
-    position: absolute; /* Позиционируем абсолютно внутри контейнера */
-    bottom: 10px; /* Прижимаем к низу */
-    left: 50%; /* Центруем по горизонтали */
-    transform: translateX(-50%); /* Корректируем центр */
-    width: 90%; /* Ширина блока */
-    max-width: 800px; /* Максимальная ширина, чтобы не растягивалось на широких экранах */
-    text-align: center; /* Выравнивание текста по центру */
-    font-family: "Arial", sans-serif; /* Запасной шрифт, если Fox on the Run не загрузится */
-    font-size: 11px; /* Мелкий шрифт, как в типичных дисклеймерах */
-    line-height: 1.4; /* Межстрочный интервал для читаемости */
-    color: #888; /* Серый, неброский цвет */
-    opacity: 0.8; /* Легкая полупрозрачность */
-    z-index: 10; /* Чтобы текст был поверх других элементов, если нужно */
-    display: block; /* Гарантируем, что он видим */
-    pointer-events: none; /* Чтобы текст не мешал кликам, если он поверх канваса */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    font-size: 8px;
+    line-height: 1.4;
+    color: #888;
+    opacity: 0.8;
+    z-index: 10;
+    display: block;
+    pointer-events: none;
+}
+
+/* МЕДИА-ЗАПРОСЫ ДЛЯ МОБИЛОК */
+@media (max-width: 768px) {
+    #unity-logo {
+        width: 180px;
+        height: 180px;
+        background-size: contain; /* ← И ЗДЕСЬ! */
+    }
+    
+    #unity-progress-bar-empty {
+        width: 90%;
+        max-width: 400px;
+        height: 16px;
+        border-radius: 10px;
+    }
+    
+    #unity-parody-footer {
+        font-size: 7px;
+        bottom: 5px;
+    }
+}
+
+/* Для совсем маленьких экранов */
+@media (max-width: 480px) {
+    #unity-logo {
+        width: 150px;
+        height: 150px;
+        background-size: contain; /* ← И ЗДЕСЬ! */
+    }
+    
+    #unity-progress-bar-empty {
+        height: 14px;
+        border-radius: 8px;
+        margin-top: 15px;
+    }
+    
+    #unity-parody-footer {
+        font-size: 6px;
+        line-height: 1.3;
+    }
 }
